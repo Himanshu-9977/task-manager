@@ -3,18 +3,19 @@ import { auth } from "@clerk/nextjs/server"
 import { getTasks } from "@/lib/actions"
 import Dashboard from "@/components/dashboard"
 
-type HomeProps = {
-  searchParams: { status?: string }
-}
-
-export default async function Home({ searchParams }: HomeProps) {
+// Use the proper Next.js types for page components
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
   const { userId } = await auth()
   if (!userId) {
     redirect("/sign-in")
   }
   
   // Get the status from the URL query parameters
-  const status = searchParams.status || "all"
+  const status = (searchParams.status as string) || "all"
   
   // Fetch tasks based on the status filter
   const { tasks, error } = await getTasks(status !== "all" ? status : undefined)
