@@ -11,6 +11,7 @@ import TaskDialog from "@/components/task-dialog"
 import TaskList from "@/components/task-list"
 import TaskBoard from "@/components/task-board"
 import { updateTaskStatus, deleteTask } from "@/lib/actions"
+import Link from "next/link"
 
 interface Task {
   _id: string
@@ -82,7 +83,7 @@ export default function Dashboard({ initialTasks, initialStatus }: DashboardProp
   return (
     <div className="container mx-auto p-4 max-w-6xl">
       <header className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">Task Manager</h1>
+        <Link href='/' className="text-xl font-bold cursor-pointer">TaskNest ✏</Link>
         <div className="flex items-center gap-4">
           <Button onClick={() => setIsDialogOpen(true)} className="flex items-center gap-2">
             <Plus className="h-4 w-4" />

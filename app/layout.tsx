@@ -8,8 +8,8 @@ import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Task Manager",
-  description: "A simple task manager application",
+  title: "TaskNest",
+  description: "TaskNest is a simple yet powerful task manager app designed to help you organize your day, track progress, and stay focused. Plan smarter and get things done — all in one clean and intuitive space.",
 };
 
 export default function RootLayout({
