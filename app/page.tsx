@@ -3,13 +3,12 @@ import { auth } from "@clerk/nextjs/server"
 import { getTasks } from "@/lib/actions"
 import Dashboard from "@/components/dashboard"
 
-type PageProps = {
-  searchParams?: {
-    status?: string
-  }
-}
-
-export default async function Home({ searchParams }: PageProps) {
+// Correct typing for a page in Next.js App Router
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: { status?: string }
+}) {
   const { userId } = await auth()
 
   if (!userId) {
