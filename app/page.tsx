@@ -15,7 +15,7 @@ export default async function Home({
   }
 
   // Get the status from the URL query parameters
-  const status = searchParams.status || "all"
+  const status = searchParams.status as string || "all"
 
   // Fetch tasks based on the status filter
   const { tasks, error } = await getTasks(status !== "all" ? status : undefined)
