@@ -96,7 +96,7 @@ export default function Dashboard({ initialTasks, initialStatus }: DashboardProp
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
         {viewMode === "list" && (
           <Tabs defaultValue={activeTab} value={activeTab} onValueChange={handleTabChange} className="w-full max-w-md">
-            <TabsList className="grid grid-cols-4 w-full">
+            <TabsList className="flex items-center justify-between w-full">
               <TabsTrigger value="all">All</TabsTrigger>
               <TabsTrigger value="todo">To Do</TabsTrigger>
               <TabsTrigger value="in-progress">In Progress</TabsTrigger>
